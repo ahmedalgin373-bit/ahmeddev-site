@@ -1,27 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy"
-content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
-<meta http-equiv="Content-Security-Policy"
-content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';">
-<title>AHMED DEV</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AHMED DEV - Programming, Web Development and Creative Projects.">
+  <meta name="theme-color" content="#050505">
+  <title>AHMED DEV | Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-<div class="card">
-    <h1>AHMED DEV</h1>
-    <p>Welcome to my programming world.</p>
-    <p>Python | JavaScript | Web Development</p>
-    <p>System Status: ONLINE</p>
+  <header class="navbar">
+    <a class="logo" href="#home">AHMED<span>DEV</span></a>
+    <nav>
+      <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="#about" data-en="About" data-ar="عني">About</a>
+      <a href="#projects" data-en="Projects" data-ar="مشاريعي">Projects</a>
+      <a href="#tools" data-en="Tools" data-ar="الأدوات">Tools</a>
+    </nav>
+    <button id="languageButton" class="language-button">العربية</button>
+  </header>
 
-    <button id="welcomeButton">CLICK ME</button>
-    <h3 id="welcome"></h3>
-</div>
+  <main>
+    <section id="home" class="hero">
+      <p class="status">● SYSTEM ONLINE</p>
+      <p class="eyebrow" data-en="WELCOME TO MY DIGITAL WORLD" data-ar="مرحباً بك في عالمي الرقمي">WELCOME TO MY DIGITAL WORLD</p>
+      <h1>AHMED <span>DEV</span></h1>
+      <h2 data-en="BUILD. CODE. CREATE." data-ar="ابنِ. اكتب الكود. ابتكر.">BUILD. CODE. CREATE.</h2>
+      <p class="intro" data-en="Exploring programming, web development and technology." data-ar="أستكشف البرمجة وتطوير الويب والتكنولوجيا.">Exploring programming, web development and technology.</p>
+      <a href="#projects" class="main-button" data-en="EXPLORE PROJECTS" data-ar="استكشف مشاريعي">EXPLORE PROJECTS</a>
+    </section>
+
+    <section id="about" class="section">
+      <p class="section-tag">// 01 - ABOUT</p>
+      <h2 data-en="About Me" data-ar="من أنا">About Me</h2>
+      <p data-en="I'm a beginner developer learning to build useful digital experiences with code." data-ar="أنا مطور في بداية رحلتي، أتعلم بناء تجارب رقمية مفيدة باستخدام البرمجة.">I'm a beginner developer learning to build useful digital experiences with code.</p>
+    </section>
+
+    <section id="projects" class="section">
+      <p class="section-tag">// 02 - PROJECTS</p>
+      <h2 data-en="My Projects" data-ar="مشاريعي">My Projects</h2>
+      <div class="project-card">
+        <h3>AHMED DEV Website</h3>
+        <p data-en="My personal web development project." data-ar="موقعي الشخصي لتعلم وتطوير الويب.">My personal web development project.</p>
+        <span>HTML / CSS / JavaScript</span>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <p class="section-tag">// 03 - SKILLS</p>
+      <h2 data-en="Technologies" data-ar="التقنيات">Technologies</h2>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>AHMED DEV <span>© 2026</span></p>
+    <p data-en="Built with curiosity and code." data-ar="صُنع بالشغف والبرمجة.">Built with curiosity and code.</p>
+  </footer>
 </body>
 </html>
