@@ -28,7 +28,7 @@ body {
     text-align: center;
     
     /* هنا ربطنا الصورة */
-    background-image: url('hero-bg.jpg'); 
+    background-image: url('./hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
