@@ -199,3 +199,19 @@ body {
     .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
     .hero-section { background-position: 70% center; }
 }
+/* تنسيقات اللغة العربية */
+html[dir="rtl"] .navbar {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .hero-section {
+    text-align: right;
+}
+
+html[dir="rtl"] .content-wrapper {
+    align-items: flex-end;
+}
