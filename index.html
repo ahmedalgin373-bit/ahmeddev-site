@@ -20,7 +20,8 @@
             <a href="#" id="nav-about">About</a>
             <a href="#" id="nav-projects">Projects</a>
             <a href="#" id="nav-tools">Tools</a>
-            <a href="#" class="lang-btn" id="lang-btn" onclick="toggleLanguage()">العربية</a>
+            <!-- هنا غيرنا طريقة الزرار -->
+            <button class="lang-btn" id="lang-btn" style="background: transparent; font-family: inherit; cursor: pointer;">العربية</button>
         </div>
     </nav>
 
@@ -45,11 +46,13 @@
         </div>
     </section>
 
-    <!-- كود تغيير اللغة -->
     <script>
+        // عرفنا المتغير هنا
         let isArabic = false;
 
-        function toggleLanguage() {
+        // ربط الزرار بالحدث
+        document.getElementById('lang-btn').addEventListener('click', function(e) {
+            e.preventDefault(); // يمنع أي ريفريش
             isArabic = !isArabic;
 
             // تغيير اتجاه الصفحة
@@ -70,7 +73,7 @@
             document.getElementById("desc-text").innerText = isArabic 
                 ? "استكشاف البرمجة، تطوير الويب، وابتكار تجارب رقمية. تحويل الأفكار إلى واقع من خلال كود نظيف وتصميم إبداعي." 
                 : "Exploring programming, web development, and creating digital experiences. Turning ideas into reality through clean code and creative design.";
-        }
+        });
     </script>
 
 </body>
