@@ -20,7 +20,7 @@
             <a href="#" id="nav-about">About</a>
             <a href="#" id="nav-projects">Projects</a>
             <a href="#" id="nav-tools">Tools</a>
-            <!-- هنا الزرار اتظبط -->
+            <!-- زرار اللغة -->
             <a href="#" class="lang-btn" id="lang-btn" onclick="toggleLanguage(event)">العربية</a>
         </div>
     </nav>
@@ -46,11 +46,12 @@
         </div>
     </section>
 
+    <!-- كود تغيير اللغة (JavaScript) -->
     <script>
         let isArabic = false;
 
         function toggleLanguage(event) {
-            if (event) event.preventDefault(); // يمنع الصفحة إنها تروح لأولها
+            if (event) event.preventDefault(); 
             isArabic = !isArabic;
 
             // تغيير اتجاه الصفحة

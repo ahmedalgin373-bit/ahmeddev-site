@@ -1,6 +1,4 @@
-/* =========================================
-   إعدادات عامة
-========================================= */
+/* إعدادات عامة */
 * {
     margin: 0;
     padding: 0;
@@ -14,9 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================================
-   قسم الخلفية والصورة
-========================================= */
+/* قسم الخلفية والصورة */
 .hero-section {
     position: relative;
     width: 100%;
@@ -27,14 +23,14 @@ body {
     justify-content: center;
     text-align: center;
     
-    /* هنا ربطنا الصورة */
-    background-image: url('./hero-bg.jpg'); 
+    /* مسار الصورة - تأكد إن الصورة اسمها hero-bg.jpg */
+    background-image: url('hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* طبقة سوداء شفافة فوق الصورة عشان الكلام يبان */
+/* طبقة سوداء شفافة فوق الصورة */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -42,11 +38,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(5, 20, 10, 0.95) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(5, 20, 10, 0.95) 100%);
     z-index: 1;
 }
 
-/* حاوية المحتوى فوق الخلفية */
+/* حاوية المحتوى */
 .content-wrapper {
     position: relative;
     z-index: 2;
@@ -57,9 +53,7 @@ body {
     margin-top: 60px;
 }
 
-/* =========================================
-   ستايل النصوص والأزرار
-========================================= */
+/* النصوص والأزرار */
 .status-badge {
     border: 1px solid #00ff41;
     color: #00ff41;
@@ -127,9 +121,7 @@ body {
     line-height: 1.6;
 }
 
-/* =========================================
-   شريط التنقل (Navbar)
-========================================= */
+/* شريط التنقل */
 .navbar {
     position: absolute;
     top: 0;
@@ -176,12 +168,15 @@ body {
     color: #00ff41;
 }
 
+/* زرار اللغة */
 .lang-btn {
     border: 1px solid #00ff41;
     color: #00ff41 !important;
     padding: 8px 15px;
     border-radius: 5px;
     transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .lang-btn:hover {
@@ -189,18 +184,12 @@ body {
     color: #000 !important;
 }
 
-/* =========================================
-   التجاوب مع الموبايل (Responsive)
-========================================= */
-@media (max-width: 768px) {
-    .main-title { font-size: 3rem; }
-    .subtitle { font-size: 1.2rem; }
-    .navbar { padding: 15px 20px; flex-direction: column; gap: 15px; }
-    .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .hero-section { background-position: 70% center; }
-}
-/* تنسيقات اللغة العربية */
+/* تظبيط الوضع العربي (RTL) */
 html[dir="rtl"] .navbar {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .logo {
     flex-direction: row-reverse;
 }
 
@@ -214,4 +203,13 @@ html[dir="rtl"] .hero-section {
 
 html[dir="rtl"] .content-wrapper {
     align-items: flex-end;
+}
+
+/* التجاوب مع الموبايل */
+@media (max-width: 768px) {
+    .main-title { font-size: 3rem; }
+    .subtitle { font-size: 1.2rem; }
+    .navbar { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero-section { background-position: 70% center; }
 }
