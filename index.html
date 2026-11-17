@@ -16,11 +16,11 @@
             <span>AHMED <span class="green-text">DEV</span></span>
         </div>
         <div class="nav-links">
-            <a href="#" class="active" id="nav-home">Home</a>
-            <a href="#" id="nav-about">About</a>
-            <a href="#" id="nav-projects">Projects</a>
-            <a href="#" id="nav-tools">Tools</a>
-            <!-- زرار اللغة -->
+            <a href="index.html" class="active" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="#" data-en="About" data-ar="من أنا">About</a>
+            <a href="#" data-en="Projects" data-ar="المشاريع">Projects</a>
+            <!-- هنا ربطنا زرار الأدوات بالصفحة الجديدة -->
+            <a href="resources.html" data-en="Resources" data-ar="المصادر">Resources</a>
             <a href="#" class="lang-btn" id="lang-btn" onclick="toggleLanguage(event)">العربية</a>
         </div>
     </nav>
@@ -31,14 +31,14 @@
             
             <div class="status-badge">
                 <div class="status-dot"></div>
-                <span id="status-text">SYSTEM ONLINE</span>
+                <span data-en="SYSTEM ONLINE" data-ar="النظام يعمل">SYSTEM ONLINE</span>
             </div>
 
-            <p class="welcome-text" id="welcome-text">WELCOME TO MY DIGITAL WORLD</p>
+            <p class="welcome-text" data-en="WELCOME TO MY DIGITAL WORLD" data-ar="مرحباً بكم في عالمي الرقمي">WELCOME TO MY DIGITAL WORLD</p>
             <h1 class="main-title">AHMED <span class="green-text">DEV</span></h1>
-            <h2 class="subtitle" id="subtitle-text">BUILD. CODE. CREATE.</h2>
+            <h2 class="subtitle" data-en="BUILD. CODE. CREATE." data-ar="ابنِ. برمج. ابتكر.">BUILD. CODE. CREATE.</h2>
             
-            <p class="description" id="desc-text">
+            <p class="description" data-en="Exploring programming, web development, and creating digital experiences. Turning ideas into reality through clean code and creative design." data-ar="استكشاف البرمجة، تطوير الويب، وابتكار تجارب رقمية. تحويل الأفكار إلى واقع من خلال كود نظيف وتصميم إبداعي.">
                 Exploring programming, web development, and creating digital experiences. 
                 Turning ideas into reality through clean code and creative design.
             </p>
@@ -46,34 +46,7 @@
         </div>
     </section>
 
-    <!-- كود تغيير اللغة (JavaScript) -->
-    <script>
-        let isArabic = false;
-
-        function toggleLanguage(event) {
-            if (event) event.preventDefault(); 
-            isArabic = !isArabic;
-
-            // تغيير اتجاه الصفحة
-            document.documentElement.dir = isArabic ? "rtl" : "ltr";
-            document.documentElement.lang = isArabic ? "ar" : "en";
-
-            // تغيير النصوص
-            document.getElementById("nav-home").textContent = isArabic ? "الرئيسية" : "Home";
-            document.getElementById("nav-about").textContent = isArabic ? "من أنا" : "About";
-            document.getElementById("nav-projects").textContent = isArabic ? "المشاريع" : "Projects";
-            document.getElementById("nav-tools").textContent = isArabic ? "الأدوات" : "Tools";
-            
-            document.getElementById("lang-btn").textContent = isArabic ? "English" : "العربية";
-            document.getElementById("status-text").textContent = isArabic ? "النظام يعمل" : "SYSTEM ONLINE";
-            document.getElementById("welcome-text").textContent = isArabic ? "مرحباً بكم في عالمي الرقمي" : "WELCOME TO MY DIGITAL WORLD";
-            document.getElementById("subtitle-text").textContent = isArabic ? "ابنِ. برمج. ابتكر." : "BUILD. CODE. CREATE.";
-            
-            document.getElementById("desc-text").textContent = isArabic 
-                ? "استكشاف البرمجة، تطوير الويب، وابتكار تجارب رقمية. تحويل الأفكار إلى واقع من خلال كود نظيف وتصميم إبداعي." 
-                : "Exploring programming, web development, and creating digital experiences. Turning ideas into reality through clean code and creative design.";
-        }
-    </script>
-
+    <!-- ربط ملف الجافاسكريبت -->
+    <script src="script.js"></script>
 </body>
 </html>
