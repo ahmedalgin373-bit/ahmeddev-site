@@ -6,11 +6,11 @@
     <title>Ahmed Dev | Cyber Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- مكتبة الذكاء الاصطناعي -->
     <script src="https://js.puter.com/v2/"></script>
 </head>
 <body>
 
+    <!-- شريط التنقل -->
     <nav class="navbar">
         <div class="logo">
             <span class="logo-icon">◈</span>
@@ -25,6 +25,7 @@
         </div>
     </nav>
 
+    <!-- القسم الرئيسي -->
     <section class="hero-section">
         <div class="content-wrapper">
             <div class="status-badge">
@@ -39,35 +40,36 @@
             </p>
         </div>
     </section>
-<!-- زر الذكاء الاصطناعي العائم -->
-<div id="ai-floating-btn" class="ai-floating-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-</div>
 
-<!-- واجهة الشات (زي ChatGPT) -->
-<div class="ai-chat-container" id="ai-chat-container">
-    <div class="ai-chat-header">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 1.2rem;">🤖</span>
-            <span>Ahmed's AI</span>
+    <!-- زر الذكاء الاصطناعي العائم -->
+    <div id="ai-floating-btn" class="ai-floating-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </div>
+
+    <!-- واجهة الشات -->
+    <div class="ai-chat-container" id="ai-chat-container">
+        <div class="ai-chat-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.2rem;">🤖</span>
+                <span>Ahmed's AI</span>
+            </div>
+            <span style="cursor:pointer; font-size: 1.2rem;" onclick="toggleAIChat()">✖</span>
         </div>
-        <span style="cursor:pointer; font-size: 1.2rem;" onclick="toggleAIChat()">✖</span>
-    </div>
-    <div class="ai-chat-body" id="ai-messages">
-        <div class="ai-msg bot">
-            <div class="msg-content">أهلاً بك! أنا المساعد الذكي لموقع Ahmed Dev. اسألني أي حاجة عن البرمجة أو الموقع!</div>
+        <div class="ai-chat-body" id="ai-messages">
+            <div class="ai-msg bot">
+                <div class="msg-content">أهلاً بك! أنا المساعد الذكي. اسألني أي حاجة!</div>
+            </div>
+        </div>
+        <div class="ai-chat-footer">
+            <input type="text" id="ai-input" placeholder="اكتب رسالتك هنا..." onkeypress="if(event.key === 'Enter') sendAIMessage()">
+            <button onclick="sendAIMessage()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
         </div>
     </div>
-    <div class="ai-chat-footer">
-        <input type="text" id="ai-input" placeholder="اكتب رسالتك هنا..." onkeypress="if(event.key === 'Enter') sendAIMessage()">
-        <button onclick="sendAIMessage()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-        </button>
-    </div>
-</div>
+
     <script src="script.js"></script>
-<button class="ai-chat-btn" onclick="toggleAIChat()">🤖</button>
 </body>
 </html>
