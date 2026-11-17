@@ -41,15 +41,131 @@ body {
     align-items: center;
     padding: 40px;
     
-    /* تأثير الزجاج (Glassmorphism) */
-    background: rgba(10, 25, 15, 0.6);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(0, 255, 65, 0.2);
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(0, 255, 65, 0.1);
+/* =========================================
+   تنسيقات الذكاء الاصطناعي (شكل ChatGPT)
+========================================= */
+/* الأيقونة العائمة */
+.ai-floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #00ff41;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 255, 65, 0.4);
+    cursor: grab;
+    z-index: 9999;
+    touch-action: none; /* مهم جداً عشان السحب يشتغل على الموبايل */
+    transition: transform 0.1s;
+}
+.ai-floating-btn:active { cursor: grabbing; transform: scale(0.95); }
+.ai-floating-btn svg { width: 30px; height: 30px; }
+
+/* صندوق الشات */
+.ai-chat-container {
+    position: fixed;
+    bottom: 100px; /* فوق الأيقونة شوية */
+    right: 30px;
+    width: 350px;
+    height: 500px;
+    background: #1a1a1a; /* لون غامق زي ChatGPT dark mode */
+    border: 1px solid #333;
+    border-radius: 12px;
+    display: none; /* مخفي في البداية */
+    flex-direction: column;
+    z-index: 9998;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    overflow: hidden;
 }
 
+/* رأس الشات */
+.ai-chat-header {
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* جسم الشات */
+.ai-chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* الرسايل */
+.ai-msg { display: flex; width: 100%; }
+.ai-msg.user { justify-content: flex-end; }
+.ai-msg.bot { justify-content: flex-start; }
+
+.msg-content {
+    max-width: 85%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: 'Fira Code', monospace;
+}
+
+.ai-msg.bot .msg-content {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-bottom-left-radius: 2px;
+}
+.ai-msg.user .msg-content {
+    background: #00ff41;
+    color: #000;
+    border-bottom-right-radius: 2px;
+}
+
+/* خانة الكتابة */
+.ai-chat-footer {
+    padding: 15px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+    display: flex;
+    gap: 10px;
+}
+.ai-chat-footer input {
+    flex: 1;
+    padding: 12px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    font-family: 'Fira Code', monospace;
+}
+.ai-chat-footer button {
+    background: #00ff41;
+    border: none;
+    border-radius: 8px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #000;
+    transition: 0.2s;
+}
+.ai-chat-footer button:hover { background: #00cc33; }
+
+/* الموبايل */
+@media (max-width: 768px) {
+    .ai-chat-container { width: 90%; right: 5%; bottom: 90px; }
+}
 /* =========================================
    ستايل النصوص والأزرار
 ========================================= */

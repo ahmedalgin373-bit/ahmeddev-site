@@ -39,24 +39,34 @@
             </p>
         </div>
     </section>
+<!-- زر الذكاء الاصطناعي العائم -->
+<div id="ai-floating-btn" class="ai-floating-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+</div>
 
-    <!-- واجهة الشات بوت -->
-    <button class="ai-chat-btn" onclick="toggleAIChat()">🤖</button>
-    
-    <div class="ai-chat-box" id="ai-chat-box">
-        <div class="ai-chat-header">
-            <span>Ahmed's AI Assistant</span>
-            <span style="cursor:pointer;" onclick="toggleAIChat()">✖</span>
+<!-- واجهة الشات (زي ChatGPT) -->
+<div class="ai-chat-container" id="ai-chat-container">
+    <div class="ai-chat-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 1.2rem;">🤖</span>
+            <span>Ahmed's AI</span>
         </div>
-        <div class="ai-chat-messages" id="ai-messages">
-            <div class="ai-msg bot">أهلاً بك! أنا المساعد الذكي. اسألني أي حاجة!</div>
-        </div>
-        <div class="ai-chat-input-area">
-            <input type="text" id="ai-input" placeholder="اكتب سؤالك هنا..." onkeypress="if(event.key === 'Enter') sendAIMessage()">
-            <button onclick="sendAIMessage()">إرسال</button>
+        <span style="cursor:pointer; font-size: 1.2rem;" onclick="toggleAIChat()">✖</span>
+    </div>
+    <div class="ai-chat-body" id="ai-messages">
+        <div class="ai-msg bot">
+            <div class="msg-content">أهلاً بك! أنا المساعد الذكي لموقع Ahmed Dev. اسألني أي حاجة عن البرمجة أو الموقع!</div>
         </div>
     </div>
-
+    <div class="ai-chat-footer">
+        <input type="text" id="ai-input" placeholder="اكتب رسالتك هنا..." onkeypress="if(event.key === 'Enter') sendAIMessage()">
+        <button onclick="sendAIMessage()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+    </div>
+</div>
     <script src="script.js"></script>
 <button class="ai-chat-btn" onclick="toggleAIChat()">🤖</button>
 </body>
