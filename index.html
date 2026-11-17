@@ -6,10 +6,11 @@
     <title>Ahmed Dev | Cyber Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الذكاء الاصطناعي -->
+    <script src="https://js.puter.com/v2/"></script>
 </head>
 <body>
 
-    <!-- شريط التنقل -->
     <nav class="navbar">
         <div class="logo">
             <span class="logo-icon">◈</span>
@@ -19,38 +20,27 @@
             <a href="index.html" class="active" data-en="Home" data-ar="الرئيسية">Home</a>
             <a href="#" data-en="About" data-ar="من أنا">About</a>
             <a href="#" data-en="Projects" data-ar="المشاريع">Projects</a>
-            <!-- هنا ربطنا زرار الأدوات بالصفحة الجديدة -->
             <a href="resources.html" data-en="Resources" data-ar="المصادر">Resources</a>
             <a href="#" class="lang-btn" id="lang-btn" onclick="toggleLanguage(event)">العربية</a>
         </div>
     </nav>
 
-    <!-- القسم الرئيسي -->
     <section class="hero-section">
         <div class="content-wrapper">
-            
             <div class="status-badge">
                 <div class="status-dot"></div>
                 <span data-en="SYSTEM ONLINE" data-ar="النظام يعمل">SYSTEM ONLINE</span>
             </div>
-
             <p class="welcome-text" data-en="WELCOME TO MY DIGITAL WORLD" data-ar="مرحباً بكم في عالمي الرقمي">WELCOME TO MY DIGITAL WORLD</p>
             <h1 class="main-title">AHMED <span class="green-text">DEV</span></h1>
             <h2 class="subtitle" data-en="BUILD. CODE. CREATE." data-ar="ابنِ. برمج. ابتكر.">BUILD. CODE. CREATE.</h2>
-            
-            <p class="description" data-en="Exploring programming, web development, and creating digital experiences. Turning ideas into reality through clean code and creative design." data-ar="استكشاف البرمجة، تطوير الويب، وابتكار تجارب رقمية. تحويل الأفكار إلى واقع من خلال كود نظيف وتصميم إبداعي.">
-                Exploring programming, web development, and creating digital experiences. 
-                Turning ideas into reality through clean code and creative design.
+            <p class="description" data-en="Exploring programming, web development, and creating digital experiences." data-ar="استكشاف البرمجة، تطوير الويب، وابتكار تجارب رقمية.">
+                Exploring programming, web development, and creating digital experiences.
             </p>
-
         </div>
     </section>
 
-    <!-- ربط ملف الجافاسكريبت -->
-    <script src="script.js"></script>
-</body>
-</html>
-    <!-- واجهة مساعد الذكاء الاصطناعي -->
+    <!-- واجهة الشات بوت -->
     <button class="ai-chat-btn" onclick="toggleAIChat()">🤖</button>
     
     <div class="ai-chat-box" id="ai-chat-box">
@@ -59,7 +49,7 @@
             <span style="cursor:pointer;" onclick="toggleAIChat()">✖</span>
         </div>
         <div class="ai-chat-messages" id="ai-messages">
-            <div class="ai-msg bot">أهلاً بك! أنا المساعد الذكي لموقع Ahmed Dev.</div>
+            <div class="ai-msg bot">أهلاً بك! أنا المساعد الذكي. اسألني أي حاجة!</div>
         </div>
         <div class="ai-chat-input-area">
             <input type="text" id="ai-input" placeholder="اكتب سؤالك هنا..." onkeypress="if(event.key === 'Enter') sendAIMessage()">
