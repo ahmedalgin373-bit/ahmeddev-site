@@ -20,8 +20,8 @@
             <a href="#" id="nav-about">About</a>
             <a href="#" id="nav-projects">Projects</a>
             <a href="#" id="nav-tools">Tools</a>
-            <!-- هنا غيرنا طريقة الزرار -->
-            <button class="lang-btn" id="lang-btn" style="background: transparent; font-family: inherit; cursor: pointer;">العربية</button>
+            <!-- هنا الزرار اتظبط -->
+            <a href="#" class="lang-btn" id="lang-btn" onclick="toggleLanguage(event)">العربية</a>
         </div>
     </nav>
 
@@ -47,12 +47,10 @@
     </section>
 
     <script>
-        // عرفنا المتغير هنا
         let isArabic = false;
 
-        // ربط الزرار بالحدث
-        document.getElementById('lang-btn').addEventListener('click', function(e) {
-            e.preventDefault(); // يمنع أي ريفريش
+        function toggleLanguage(event) {
+            if (event) event.preventDefault(); // يمنع الصفحة إنها تروح لأولها
             isArabic = !isArabic;
 
             // تغيير اتجاه الصفحة
@@ -60,20 +58,20 @@
             document.documentElement.lang = isArabic ? "ar" : "en";
 
             // تغيير النصوص
-            document.getElementById("nav-home").innerText = isArabic ? "الرئيسية" : "Home";
-            document.getElementById("nav-about").innerText = isArabic ? "من أنا" : "About";
-            document.getElementById("nav-projects").innerText = isArabic ? "المشاريع" : "Projects";
-            document.getElementById("nav-tools").innerText = isArabic ? "الأدوات" : "Tools";
+            document.getElementById("nav-home").textContent = isArabic ? "الرئيسية" : "Home";
+            document.getElementById("nav-about").textContent = isArabic ? "من أنا" : "About";
+            document.getElementById("nav-projects").textContent = isArabic ? "المشاريع" : "Projects";
+            document.getElementById("nav-tools").textContent = isArabic ? "الأدوات" : "Tools";
             
-            document.getElementById("lang-btn").innerText = isArabic ? "English" : "العربية";
-            document.getElementById("status-text").innerText = isArabic ? "النظام يعمل" : "SYSTEM ONLINE";
-            document.getElementById("welcome-text").innerText = isArabic ? "مرحباً بكم في عالمي الرقمي" : "WELCOME TO MY DIGITAL WORLD";
-            document.getElementById("subtitle-text").innerText = isArabic ? "ابنِ. برمج. ابتكر." : "BUILD. CODE. CREATE.";
+            document.getElementById("lang-btn").textContent = isArabic ? "English" : "العربية";
+            document.getElementById("status-text").textContent = isArabic ? "النظام يعمل" : "SYSTEM ONLINE";
+            document.getElementById("welcome-text").textContent = isArabic ? "مرحباً بكم في عالمي الرقمي" : "WELCOME TO MY DIGITAL WORLD";
+            document.getElementById("subtitle-text").textContent = isArabic ? "ابنِ. برمج. ابتكر." : "BUILD. CODE. CREATE.";
             
-            document.getElementById("desc-text").innerText = isArabic 
+            document.getElementById("desc-text").textContent = isArabic 
                 ? "استكشاف البرمجة، تطوير الويب، وابتكار تجارب رقمية. تحويل الأفكار إلى واقع من خلال كود نظيف وتصميم إبداعي." 
                 : "Exploring programming, web development, and creating digital experiences. Turning ideas into reality through clean code and creative design.";
-        });
+        }
     </script>
 
 </body>
