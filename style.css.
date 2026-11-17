@@ -1,0 +1,104 @@
+/* =========================================
+   تنسيقات مساعد الذكاء الاصطناعي (Chatbot)
+========================================= */
+.ai-chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    color: #00ff41;
+    border: 2px solid #00ff41;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.ai-chat-btn:hover { background: #00ff41; color: #000; }
+
+.ai-chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background: rgba(5, 20, 10, 0.95);
+    border: 1px solid #00ff41;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+    display: none; /* مخفي في البداية */
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.ai-chat-header {
+    background: #00ff41;
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ai-msg {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    max-width: 80%;
+    line-height: 1.4;
+}
+.ai-msg.bot {
+    background: rgba(0, 255, 65, 0.1);
+    color: #fff;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    align-self: flex-start;
+}
+.ai-msg.user {
+    background: #00ff41;
+    color: #000;
+    align-self: flex-end;
+    font-weight: bold;
+}
+
+.ai-chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 255, 65, 0.3);
+    background: #000;
+}
+.ai-chat-input-area input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    font-family: 'Fira Code', monospace;
+}
+.ai-chat-input-area button {
+    background: transparent;
+    border: none;
+    color: #00ff41;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 10px;
+}

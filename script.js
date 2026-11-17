@@ -31,3 +31,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('siteLang') || 'en';
     setLanguage(savedLang);
 });
+// =========================================
+// كود مساعد الذكاء الاصطناعي (Puter.js)
+// =========================================
+
+function toggleAIChat() {
+    const chatBox = document.getElementById('ai-chat-box');
+    if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+        chatBox.style.display = 'flex';
+    } else {
+        chatBox.style.display = 'none';
+    }
+}
+
+async function sendAIMessage() {
+    const input = document.getElementById('ai-input');
+    const messages = document.getElementById('ai-messages');
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    // إضافة رسالة المستخدم
+    messages.innerHTML += `<div class="ai-msg user">${text}</div>`;
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+
+    // إضافة رسالة تحميل
+    const loadingId = 'loading-' + Date.now();
+    messages.innerHTML += `<div class="ai-msg bot" id="${loadingId}">جاري التفكير...</div>`;
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+        // هنا بنستخدم ذكاء اصطناعي مجاني بالكامل من المتصفح
+        const response = await puter.ai.chat(text);
+        
+        // مسح رسالة التحميل وإضافة الرد
+        document.getElementById(loadingId).remove();
+        messages.innerHTML += `<div class="ai-msg bot">${response}</div>`;
+        messages.scrollTop = messages.scrollHeight;
+        
+    } catch (error) {
+        document.getElementById(loadingId).remove();
+        messages.innerHTML += `<div class="ai-msg bot" style="color:red;">عذراً، حدث خطأ. تأكد من اتصالك بالإنترنت.</div>`;
+    }
+}
